@@ -7,10 +7,12 @@ app.use(express.json());
 
 // Маршрут для прийому даних від NFC
 app.post('/nfc', (req, res) => {
+    console.log('Received a request on /nfc'); // Ця строка допоможе перевірити, чи обробляється запит
     const data = req.body;
     console.log('Received data:', data);
     res.send(`Received data: ${JSON.stringify(data)}`);
 });
+
 
 // Запуск сервера
 app.listen(PORT, () => {
